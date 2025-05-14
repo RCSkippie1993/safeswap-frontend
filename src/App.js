@@ -6,7 +6,16 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<h1>Welcome to SafeSwap</h1>} />
+        <Route
+          path="/"
+          element={
+            <div style={{ padding: "20px", fontFamily: "Arial" }}>
+              <h1>Welcome to SafeSwap</h1>
+              <p>Your secure platform to buy and sell goods.</p>
+              <a href="/register">Go to Register</a>
+            </div>
+          }
+        />
         <Route path="/register" element={<Register />} />
       </Routes>
     </BrowserRouter>
@@ -14,4 +23,3 @@ function App() {
 }
 
 export default App;
-
