@@ -1,12 +1,17 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from "./Register";
 
 function App() {
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial" }}>
-      <h1>Welcome to SafeSwap</h1>
-      <p>Your secure platform to buy and sell goods.</p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<h1>Welcome to SafeSwap</h1>} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
