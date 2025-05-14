@@ -15,25 +15,8 @@ function Register() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setMessage("✅ Registration successful. You can now log in.");
-      } else {
-        setMessage(`❌ ${data.message || "Registration failed"}`);
-      }
-    } catch (err) {
-      setMessage("❌ Server error");
-    }
+    // Just to verify form is working
+    setMessage("Submitted! Name: " + form.name);
   };
 
   return (
@@ -47,7 +30,7 @@ function Register() {
           value={form.name}
           onChange={handleChange}
           required
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: "100%", marginBottom: 10, padding: 8 }}
         />
         <input
           type="email"
@@ -56,7 +39,7 @@ function Register() {
           value={form.email}
           onChange={handleChange}
           required
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: "100%", marginBottom: 10, padding: 8 }}
         />
         <input
           type="password"
@@ -65,9 +48,11 @@ function Register() {
           value={form.password}
           onChange={handleChange}
           required
-          style={{ width: "100%", marginBottom: 10 }}
+          style={{ width: "100%", marginBottom: 10, padding: 8 }}
         />
-        <button type="submit" style={{ width: "100%" }}>Register</button>
+        <button type="submit" style={{ width: "100%", padding: 10 }}>
+          Register
+        </button>
       </form>
       {message && <p>{message}</p>}
     </div>
