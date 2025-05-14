@@ -9,10 +9,10 @@ function App() {
         <Route
           path="/"
           element={
-            <div style={{ padding: "20px", fontFamily: "Arial" }}>
+            <div style={{ padding: 20 }}>
               <h1>Welcome to SafeSwap</h1>
               <p>Your secure platform to buy and sell goods.</p>
-              <a href="/register">Go to Register</a>
+              <a href="/register">➡️ Go to Register</a>
             </div>
           }
         />
@@ -23,3 +23,4 @@ function App() {
 }
 
 export default App;
+
